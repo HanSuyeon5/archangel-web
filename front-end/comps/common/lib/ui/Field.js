@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+//field 컴포넌트 정의 - 사용자로부터 입력 값 받고 표시하는 역할
 class Field extends Component {
   constructor(props) {
     super(props);

@@ -20,6 +20,7 @@ function SearchResult({ record }) {
   );
 } // SearchResult
 
+//SearchResults 클래스 컴포넌트- 검색 결과의 목록을 관리하고 표시함
 class SearchResults extends Component {
   constructor(props) {
     super(props);
@@ -28,6 +29,7 @@ class SearchResults extends Component {
     }
   } // constructor
 
+  //검색 결과와 오류를 초기화하는 함수
   clear() {
     this.setSearchResults(null, null);
     this.setErrors(null);
@@ -36,7 +38,7 @@ class SearchResults extends Component {
   setSearchResults(searchTerm, results, searchFn) {
     this.setState({
       searchTerm: searchTerm,
-      searchResults: results,
+      searchResults: results,Field
       searchFn: searchFn
     });
   } // setSearchResults
@@ -59,6 +61,7 @@ class SearchResults extends Component {
     return this.renderResults(searchTerm, searchResults);
   } // render
 
+  //검색 실패시 오류 메시지를 표시함
   renderErrors(errors) {
     return (
       <div>
@@ -72,7 +75,7 @@ class SearchResults extends Component {
       </div>
     )
   } // renderErrors
-
+  //개별 검색 결과를 표시하고, "history"를 클릭하여 결과를 확장할 수 있도록 collapsible를 사용함
   renderResult(result) {
     const record = result[0];
     const prev = result.slice(1);
@@ -93,6 +96,7 @@ class SearchResults extends Component {
     )
   };
 
+  //전체 검색 결과를 표시함
   renderResults(searchTerm, searchResults) {
     searchResults = searchResults || [];
     searchResults.reverse();
